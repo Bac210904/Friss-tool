@@ -1,0 +1,336 @@
+
+//var fullName = 'Nguyen Thu';
+// var age = 19;
+// alert(fullName);
+// alert(age);
+ /* HÀM TRONG BUILT-IN
+     1. Alert
+     2. Console
+     3. Confirm
+     4. Prompt
+     5. Set timeout
+     6. Set interval
+ */
+
+// console.log(fullName) // in ra fullName
+// console.warn(fullName)// in ra canh bao 
+// console.error(fullName)//in ra loi 
+//confirm('xac nhan ban du tuoi')
+//prompt('Xac nhan ban du tuoi')// cho nhap so, chu
+// setTimeout(function() { //chay trong thoi gian an dinh
+// alert('Thong bao')
+// }, 1000)
+// setInterval(function() { // Chay lien tuc va xuong dong
+//     console.log("Day la log" + Math.random())
+// },1000)
+
+/* TOÁN TỬ 
+1. Toán tử số học - Arithmetic
+2. Toán tử gán - Assigment
+3. Toán tử so sánh - Comparison
+4. Toán tử logic - logical
+*/
+
+// Toán tử số học
+// var a = 1 + 2 
+// console.log(a)
+// Toán tử gán
+// var fullName = 'Nguyen Thu'; 
+// Toán tử so sánh
+// var a = 1  
+// var b = 2
+// if (a < b){
+//     alert('Dung')
+// }
+// Toán tử logic
+// var a = 1  
+// var b = 2
+// if (a > 0 && b > 0) {
+//     alert('a va b lon hon 0')
+// } 
+// var a = 6
+// var output = a++
+// console.log(output)
+// Toán tử chuỗi -string operator
+// var a = 'Thu'
+// var b = 'Nguyen'
+// console.log(a + ' ' +  b)
+// Kiểu dữ liệu Boolean => so sanh
+// var a = 1
+// var b = 2
+// var isSuccess = a > b
+// console.log(isSuccess)   => Đưa ra đúng hay sai
+
+/* KIỂU GIỮ LIỆU
+1. Dữ liệu nguyên thủy - Primitive Data
+  - Number           var = 1                                 console.log(tyeof a)
+  - String           var fullName = 'Thu \' Nguyen'          console.log(tyeof fullName)
+  - Boollean         var isSuccess = true                    console.log(Tyeof issSuccess)
+  - Undefined        var age
+  - Null             var isNull = null                       
+  - Symbol           var id = Symbol('id')
+
+2. Dữ liệu phức tạp - Complex Data
+  - Functiom         var mayFunction = function(){...}
+  - Object           var myObject = {...}
+                     var myArray = [...]
+*/
+
+/* TOÁN TỬ SO SÁNH 
+1. Bằng: ===
+2. Không bằng :!==
+=> so sánh cả kiểu dữ liệu
+*/
+
+/* CÂU LỆNH ĐIỀU KIỆN VÀ PHÉP SO SÁNH*/
+// var a = 1
+// var b = 2
+// var result = 'A' && 'B' && 'C'
+// console.log(result) =>C
+// // var result = a < b && a > 0
+// // console.log(result)
+// // // var result = a < b
+// // // console.log('result', result)
+// // // if (a < b){
+// // //     console.log('A < B')
+// // // } else {
+// // //     console.log('A < B')
+// // // }
+
+// HÀM
+// function showDialog() {
+//     alert('xin chao cac ban')
+// }
+// showDialog()
+
+/*1. Tham số hàm*/
+// function writelog(message) {
+//     console.log(message)
+// }
+// writelog('test message')  //test message
+
+// function writelog() {
+//     console.log(arguments)
+// }
+// writelog('Log 1', 'Log 2', 'Log 3') //in ra log 1-2-3
+
+
+// function writelog() {
+//     var myString = ' '
+//     for (var param of arguments) {
+//         myString += `${param} - `
+//     }
+//     console.log(myString)
+    // }
+// writelog('Log 1', 'Log 2', 'Log 3')
+
+
+//Return trong hàm
+//  var isConfirm = confirm('Message')
+//  console.log(isConfirm)
+
+//  function cong(a, b){
+//   return a + b
+//  }
+//  var result = cong (2, 8)
+//  console.log(result)
+
+
+/* CHUỖI */
+
+//var fullName = 'Nguyen Thu la \'sieu nhan\''
+//var fullName = 'day la dau \\'
+// var fullName = new String('Nguyen thu')
+//var fullName = 'Nguyen Thu'
+//console.log(fullName.length)
+
+// var firstName = 'Thu'
+// var lastName = 'Nguyen'
+// console.log(`toi la: ${firstName} ${lastName}`)
+
+
+//Làm việc với chuỗi
+//1. length : Để đo độ dài chuỗi
+//var mytString = '    Nguyen Thu Thu xinh gai Thu  '
+//console.log(mytString.length)
+
+// 2. find index  : tìm vị trí kí tự
+//console.log(mytString.indexOf('Thu')) => Vị trí đầu tiên
+//console.log(mytString.indexOf('Thu', 9)) => vị trí muốn tìm
+//console.log(mytString.lastIndexOf('Thu')) => vị trí cuối cùng
+//console.log(mytString.search('Thu'))=> chỉ tìm được cái đầu tiên
+
+
+// 3. cut String
+//console.log(mytString.slice(7, 10))
+//console.log(mytString.slice(0. -3))
+
+// 4. replace : Ghi đè
+//console.log(mytString.replace('Thu', 'xinh') ) Chỉ đè chữ đầu tiên
+//console.log(mytString.replace(/Thu/g, 'xing')) Đè tất cả
+
+// 5. convert to upper case :chuyển all bằng chữ hoa
+// console.log(mytString.toLocaleUpperCase())
+
+// 6. convert to lower case :chuyển all thành chữ thường
+//console.log(mytString.toLocaleLowerCase())
+
+// 7. trim 
+//console.log(mytString.trim().length)
+
+// 8. split
+// var languades = 'Thu , Nguyen , Thi'
+// console.log(languades.split(' , '))
+
+// 9. get a character by index : Lay ra chu cai
+//const mytString = 'Nguyen Thu'
+// console.log(mytString.charAt(3))
+//console.log(mytString[3])
+
+/* LÀM VIỆC VỚI CHUỖI */
+//var age = 18
+//var pi = 3.14
+//var othetNumber = new Number(9)
+//console.log(age.toString()) => từ số qua chuỗi
+//console.log(pi.toFixed()) => làm tròn số thập phân
+
+/* MẢNG */
+// var languages = [
+//   'Javascript',
+//   'C',
+//   'PHP',
+//   'C++',
+
+// ]
+// console.log(languages)
+// console.log(Array.isArray(languages)) //=> kiểm tra kiểu dữ liệu
+// console.log(languages.length) //=> kiểm tra độ dài mảng
+// console.log(languages[0]) // => Lấy ra phần tử mảng
+
+//Làm việc với mảng
+//1. to string : Chuyển qua chuỗi
+// var languages = [
+//   'java',
+//   'PHP',
+//   'Ruby'
+// ]
+//console.log(languages.toString())
+//console.log(languages.join(', '))
+
+//2. pop : xóa đi phần tử cuối mảng, trả lại phần tử đã xóa
+// console.log(languages.pop()) //Trả 
+// console.log(languages) // mảng đã xóa
+
+//3. push : Thêm vào mảng
+// console.log(languages.push('C++')) // Thêm vào cuối mảng
+// console.log(languages) //trả mảng mới
+
+//4. shift : xóa đầu 
+// console.log(languages.shift())
+// console.log(languages)
+
+//5. unshift : Thêm vào đầu
+// console.log(languages.unshift('C++'))
+// console.log(languages)
+
+//6. splicing : xóa, cắt, chèn phần tử vào mảng
+// console.log(languages.splice(1, 1)) // xóa
+// languages.splice(1, 0, 'C++') //Chèn
+//console.log(languages)
+
+//7. concat: ghép mảng
+// var languages2 = [
+//   'C',
+//   'C++'
+// ]
+//  console.log(languages.concat(languages2)) // ghép mảng
+
+//8. slicing : Cắt mảng
+ //console.log(languages.slice(1, 2)), 
+
+ /* OBJECT*/
+//  var myInfo = {
+//   name: 'Nguyen Thu',
+//   address: 'Ha Noi'
+//  }
+//  myInfo.email = 'ntthu'
+//  myInfo['my age'] = '21'
+//  var myKey = 'address'
+//  console.log(myInfo)
+//  console.log(myInfo.name) // lấy value C1
+//  console.log(myInfo[myKey])// Lấy  value C2
+
+//object constructor - Xây dựng đối tượng
+// function User(firstName, lastName, avarta) {
+// this.firstName = firstName
+// this.lastName = lastName
+// this.avarta = avarta
+// this.getName = function(){ //Thêm thuộc tính
+//   return `${this.firstName} ${this.lastName}`
+// }
+// }
+// var author = new User('Thu', 'Nguyễn', 'avatar');
+// var user = new User('Thi', "Nguyen", 'avatar')
+// author.title = 'chia se '
+// user.comment = 'thich'
+// console.log(author.getName()) //in ra họ và tên
+// console.log(user)
+
+//objeck propotype
+// function User(firstName, lastName, avarta) {
+// this.firstName = firstName
+// this.lastName = lastName
+// this.avarta = avarta
+// this.getName = function(){ //Thêm thuộc tính
+//   return `${this.firstName} ${this.lastName}`
+// }
+// } 
+// User.prototype.className = 'DT5' 
+
+// var user = new User('Thu', 'Nguyen', 'Anh 1')
+// var user2 = new User('Thi', 'Nguyen', 'Anh 2')
+// console.log(user.className)
+// console.log(user2)
+
+
+//Đối tượng Date
+// var date = new Date() //trả ra đối tượng
+// console.log(date)
+// var year = date.getFullYear()
+// var month = date.getMonth() + 1
+// var day = date.getDate()
+// console.log(`${day}/${month}/${year}`) //Cho ra ngày tháng năm
+
+
+
+
+//Math object
+// Math.PI() - Trả về PI
+// Math.round() - Làm tròn trên
+// Math.abs() - trả về giá trị tuyệt đối
+// Math.Ceil() - Làm tròn trên
+// Math.Floor() - làm tròn dưới
+
+// Math.random() - trả về số thập phân nhỏ hơn 1
+// var random = Math.floor(Math.random() * 5)
+// var bonus = [
+//   '10$',
+//   '20$',
+//   '30$',
+//   '40$',
+//   '50$'
+// ]
+// console.log(bonus[random])
+
+// Math.min() - trả về giá trị nhỏ nhất
+// Math.max()- trả về giá trị lớn nhất
+
+//CÂU LỆNH RẼ NHÁNH - switch
+// var date = 5
+// switch(date) {
+//   case 2:
+//     console.log('Hom nay la thu 2')
+//     break   //Để thoát case
+//   default:
+//     console.log('không biết') //in ra nếu không thuộc case
+// }
