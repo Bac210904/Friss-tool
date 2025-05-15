@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi"> <!--Đặt ngôn ngữ là tiếng việt-->
+
+<head>
+    <meta charset="UTF-8"><!--Đảm bảo trang hỗ trợ tiếng việt-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Máy tính phương trình Friis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+
+        input,
+        button {
+            margin: 10px;
+            padding: 15px;
+            width: 110%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Máy tính phương trình Friis</h2>
+        <label for="pT">Công suất phát (W):</label>
+        <input type="number" id="pT" class="input" placeholder="Nhập Pt">
+
+        <label for="gT">Hệ số anten phát (dBi):</label>
+        <input type="number" id="gT" class="input" placeholder="Nhập Gt">
+
+        <label for="gR">Hệ số anten thu (dBi):</label>
+        <input type="number" id="gR" class="input" placeholder="Nhập Gr">
+
+        <label for="f">Tần số (Hz):</label>
+        <input type="number" id="f" class="input" placeholder="Nhập f">
+
+        <label for="d">Khoảng cách (m):</label>
+        <input type="number" id="d" class="input" placeholder="Nhập d">
+
+        <button id="uploadBtn" class="button" onclick="calculateFriis()">Tính toán
+        </button>
+        <h3>Kết quả: <span id="result">N/A</span> W</h3>
+    </div>
+
+    <script>
+        function calculateFriis() {
+            const c = 3e8; // Tốc độ ánh sáng (m/s)
+            let pT = parseFloat(document.getElementById("pT").value);
+            let gT = parseFloat(document.getElementById("gT").value);
+            let gR = parseFloat(document.getElementById("gR").value);
+            let f = parseFloat(document.getElementById("f").value);
+            let d = parseFloat(document.getElementById("d").value);
+
+            if (isNaN(pT) || isNaN(gT) || isNaN(gR) || isNaN(f) || isNaN(d) || d <= 0 || f <= 0) {
+                alert("Vui lòng nhập tất cả các giá trị hợp lệ.");
+                return;
+            }
+
+            let lambda = c / f; // Bước sóng
+            let pR = (pT * Math.pow(10, gT / 10) * Math.pow(10, gR / 10) * Math.pow(lambda, 2)) / (Math.pow(4 * Math.PI * d, 2));
+
+            document.getElementById("result").innerText = pR.toExponential(3);
+        }
+    </script>
+    <img src="https://e7.pngegg.com/pngimages/489/880/png-clipart-friis-transmission-equation-aerials-dbm-transmitter-antenna-gain-speed-of-light-formula-angle-electronics.png"
+        alt="Hình ảnh truyền" class="anh-goc-trai-fixed">
+    <img src="https://cdn.everythingrf.com/live/friisformula4.png" alt="Phương trình Friis" class="anh-goc-trai-fixed1">
+</body>
+
+</html>
